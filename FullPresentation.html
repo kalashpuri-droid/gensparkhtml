@@ -879,21 +879,26 @@
       .dot.swiggy { background-color: #FC8019; }
       .dot.zepto { background-color: #370F6E; }
 
-      .bar-table {
-        width: 100%;
-        border-collapse: collapse;
-        text-align: center;
-        font-size: 14px;
+      .bar-chart {
+        display: flex;
+        justify-content: space-around;
+        align-items: flex-end;
+        height: 260px;
         margin-bottom: 20px;
       }
-      .bar-table th,
-      .bar-table td {
-        border: 1px solid #dee1e6;
-        padding: 6px;
+      .bar-group {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 8px;
+      }
+      .bars {
+        display: flex;
+        gap: 10px;
+        align-items: flex-end;
       }
       .bar {
-        display: inline-block;
-        height: 16px;
+        width: 40px;
       }
       .bar.blinkit { background-color: #FFDE21; }
       .bar.swiggy { background-color: #FC8019; }
@@ -903,6 +908,12 @@
         padding-left: 20px;
         font-size: 15px;
         line-height: 1.5;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px 40px;
+      }
+      .insights li {
+        width: 45%;
       }
     </style>
   </head>
@@ -919,36 +930,32 @@
           <span class="legend-item"><span class="dot swiggy"></span>Swiggy</span>
           <span class="legend-item"><span class="dot zepto"></span>Zepto</span>
         </div>
-        <table class="bar-table">
-          <thead>
-            <tr>
-              <th>Pack Size</th>
-              <th>Blinkit</th>
-              <th>Swiggy</th>
-              <th>Zepto</th>
-            </tr>
-          </thead>
-          <tbody>
-            <tr data-pack-range="Up to 120g">
-              <td>Up to 120g</td>
-              <td><span class="bar blinkit" data-platform="Blinkit" data-metric="market_share">&lt;Blinkit &lt;120g Share&gt;</span></td>
-              <td><span class="bar swiggy" data-platform="Swiggy" data-metric="market_share">&lt;Swiggy &lt;120g Share&gt;</span></td>
-              <td><span class="bar zepto" data-platform="Zepto" data-metric="market_share">&lt;Zepto &lt;120g Share&gt;</span></td>
-            </tr>
-            <tr data-pack-range="121-250g">
-              <td>121–250g</td>
-              <td><span class="bar blinkit" data-platform="Blinkit" data-metric="market_share">&lt;Blinkit 121-250g Share&gt;</span></td>
-              <td><span class="bar swiggy" data-platform="Swiggy" data-metric="market_share">&lt;Swiggy 121-250g Share&gt;</span></td>
-              <td><span class="bar zepto" data-platform="Zepto" data-metric="market_share">&lt;Zepto 121-250g Share&gt;</span></td>
-            </tr>
-            <tr data-pack-range="gt250g">
-              <td>&gt;250g</td>
-              <td><span class="bar blinkit" data-platform="Blinkit" data-metric="market_share">&lt;Blinkit &gt;250g Share&gt;</span></td>
-              <td><span class="bar swiggy" data-platform="Swiggy" data-metric="market_share">&lt;Swiggy &gt;250g Share&gt;</span></td>
-              <td><span class="bar zepto" data-platform="Zepto" data-metric="market_share">&lt;Zepto &gt;250g Share&gt;</span></td>
-            </tr>
-          </tbody>
-        </table>
+        <div class="bar-chart">
+          <div class="bar-group" data-pack-range="Up to 120g">
+            <div class="bars">
+              <div class="bar blinkit" data-platform="Blinkit" data-metric="market_share" style="height: &lt;Blinkit &lt;120g Share&gt;%"></div>
+              <div class="bar swiggy" data-platform="Swiggy" data-metric="market_share" style="height: &lt;Swiggy &lt;120g Share&gt;%"></div>
+              <div class="bar zepto" data-platform="Zepto" data-metric="market_share" style="height: &lt;Zepto &lt;120g Share&gt;%"></div>
+            </div>
+            <div class="group-label">Up to 120g</div>
+          </div>
+          <div class="bar-group" data-pack-range="121-250g">
+            <div class="bars">
+              <div class="bar blinkit" data-platform="Blinkit" data-metric="market_share" style="height: &lt;Blinkit 121-250g Share&gt;%"></div>
+              <div class="bar swiggy" data-platform="Swiggy" data-metric="market_share" style="height: &lt;Swiggy 121-250g Share&gt;%"></div>
+              <div class="bar zepto" data-platform="Zepto" data-metric="market_share" style="height: &lt;Zepto 121-250g Share&gt;%"></div>
+            </div>
+            <div class="group-label">121–250g</div>
+          </div>
+          <div class="bar-group" data-pack-range="gt250g">
+            <div class="bars">
+              <div class="bar blinkit" data-platform="Blinkit" data-metric="market_share" style="height: &lt;Blinkit &gt;250g Share&gt;%"></div>
+              <div class="bar swiggy" data-platform="Swiggy" data-metric="market_share" style="height: &lt;Swiggy &gt;250g Share&gt;%"></div>
+              <div class="bar zepto" data-platform="Zepto" data-metric="market_share" style="height: &lt;Zepto &gt;250g Share&gt;%"></div>
+            </div>
+            <div class="group-label">&gt;250g</div>
+          </div>
+        </div>
       </div>
       <div class="insights" data-block-type="pack_size_insights">
         <h3>Key Pack Size Insights</h3>
