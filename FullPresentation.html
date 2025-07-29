@@ -1218,24 +1218,61 @@
 &lt;/html&gt;
 '></iframe>
 <iframe title="SOV Analysis" srcdoc='&lt;!DOCTYPE html&gt;
-&lt;html lang="en"&gt;
+&lt;html lang=&quot;en&quot;&gt;
 &lt;head&gt;
-&lt;meta charset="UTF-8" /&gt;
+&lt;meta charset=&quot;UTF-8&quot; /&gt;
 &lt;title&gt;SOV Analysis&lt;/title&gt;
-&lt;meta name="viewport" content="width=1280, initial-scale=1.0" /&gt;
+&lt;meta name=&quot;viewport&quot; content=&quot;width=1280, initial-scale=1.0&quot; /&gt;
 &lt;style&gt;
- body{margin:0;padding:0;font-family:"Inter", sans-serif;background:#fff;width:1280px;height:720px;}
- .top-accent{height:7px;background:#007ABC;width:100%;}
- .header-bar{height:86px;display:flex;justify-content:space-between;align-items:center;padding:0 40px;border-bottom:1px solid #f3f4f6;}
- .slide-title{font-family:"Archivo", sans-serif;font-size:32px;font-weight:700;color:#171a1f;}
- .logo{height:43px;}
- .chart{height:400px;margin:40px;border:1px dashed #9095a0;display:flex;align-items:center;justify-content:center;}
+  body { margin:0; padding:0; font-family:&quot;Inter&quot;, sans-serif; background:#ffffff; width:1280px; height:720px; }
+  .top-accent{ height:7px; background-color:#007ABC; width:100%; }
+  .header-bar{ height:86px; display:flex; justify-content:space-between; align-items:center; padding:0 40px; border-bottom:1px solid #f3f4f6; }
+  .slide-title{ font-family:&quot;Archivo&quot;, sans-serif; font-size:32px; font-weight:700; color:#171a1f; }
+  .logo{ height:43px; }
+  .grid{ display:grid; grid-template-columns:1fr 1fr; grid-template-rows:auto auto; gap:20px; padding:30px 40px; }
+  .chart-container{ border:1px dashed #9095a0; height:260px; display:flex; flex-direction:column; align-items:center; justify-content:center; }
+  .legend{ margin-bottom:10px; font-size:14px; }
+  .legend span{ margin-right:12px; }
+  .dot{ width:12px; height:12px; border-radius:50%; display:inline-block; margin-right:4px; }
+  .blinkit{ background:#FFDE21; }
+  .swiggy{ background:#FC8019; }
+  .zepto{ background:#370F6E; }
+  .chart-placeholder{ flex:1; display:flex; align-items:center; justify-content:center; font-size:14px; color:#9095a0; }
+  .insights{ border:1px solid #dee1e6; padding:20px; }
+  .insights h3{ font-family:&quot;Archivo&quot;, sans-serif; font-size:20px; margin:0 0 10px 0; }
+  .insights h4{ font-family:&quot;Inter&quot;, sans-serif; font-size:16px; margin:0 0 8px 0; }
+  .insights ul{ padding-left:16px; font-size:15px; }
 &lt;/style&gt;
 &lt;/head&gt;
-&lt;body&gt;
-&lt;div class="top-accent"&gt;&lt;/div&gt;
-&lt;div class="header-bar"&gt;&lt;div class="slide-title"&gt;SOV Analysis&lt;/div&gt;&lt;img src="1DS-Logo-1.png" alt="1DS Logo" class="logo"/&gt;&lt;/div&gt;
-&lt;div class="chart" data-block-type="sov_chart" data-chart-type="bar-grouped"&gt;[SOV CHART PLACEHOLDER]&lt;/div&gt;
+&lt;body data-slide-type=&quot;sov_analysis&quot;&gt;
+&lt;div class=&quot;top-accent&quot;&gt;&lt;/div&gt;
+&lt;div class=&quot;header-bar&quot;&gt;&lt;div class=&quot;slide-title&quot;&gt;SOV Analysis&lt;/div&gt;&lt;img src=&quot;1DS-Logo-1.png&quot; alt=&quot;1DS Logo&quot; class=&quot;logo&quot; /&gt;&lt;/div&gt;
+&lt;div class=&quot;grid&quot;&gt;
+  &lt;div class=&quot;chart-container&quot; data-block-type=&quot;sov_chart&quot; data-chart-type=&quot;column-clustered&quot;&gt;
+    &lt;h3&gt;Overall SOV by Platform&lt;/h3&gt;
+    &lt;div class=&quot;legend&quot;&gt;&lt;span&gt;&lt;span class=&quot;dot blinkit&quot;&gt;&lt;/span&gt;Blinkit&lt;/span&gt;&lt;span&gt;&lt;span class=&quot;dot swiggy&quot;&gt;&lt;/span&gt;Swiggy&lt;/span&gt;&lt;span&gt;&lt;span class=&quot;dot zepto&quot;&gt;&lt;/span&gt;Zepto&lt;/span&gt;&lt;/div&gt;
+    &lt;div class=&quot;chart-placeholder&quot;&gt;[Overall SOV Chart]&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;insights&quot; data-block-type=&quot;sov_insights&quot;&gt;
+    &lt;h3&gt;Key SOV Insights&lt;/h3&gt;
+    &lt;h4&gt;Coolberg SOV Strengths&lt;/h4&gt;
+    &lt;ul&gt;
+      &lt;li data-insight-index=&quot;1&quot;&gt;&amp;lt;Insight 1&amp;gt;&lt;/li&gt;
+      &lt;li data-insight-index=&quot;2&quot;&gt;&amp;lt;Insight 2&amp;gt;&lt;/li&gt;
+      &lt;li data-insight-index=&quot;3&quot;&gt;&amp;lt;Insight 3&amp;gt;&lt;/li&gt;
+    &lt;/ul&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;chart-container&quot; data-block-type=&quot;sov_chart&quot; data-chart-type=&quot;column-clustered&quot;&gt;
+    &lt;h3&gt;Organic SOV by Platform&lt;/h3&gt;
+    &lt;div class=&quot;legend&quot;&gt;&lt;span&gt;&lt;span class=&quot;dot blinkit&quot;&gt;&lt;/span&gt;Blinkit&lt;/span&gt;&lt;span&gt;&lt;span class=&quot;dot swiggy&quot;&gt;&lt;/span&gt;Swiggy&lt;/span&gt;&lt;span&gt;&lt;span class=&quot;dot zepto&quot;&gt;&lt;/span&gt;Zepto&lt;/span&gt;&lt;/div&gt;
+    &lt;div class=&quot;chart-placeholder&quot;&gt;[Organic SOV Chart]&lt;/div&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;chart-container&quot; data-block-type=&quot;sov_chart&quot; data-chart-type=&quot;column-clustered&quot;&gt;
+    &lt;h3&gt;Paid SOV by Platform&lt;/h3&gt;
+    &lt;div class=&quot;legend&quot;&gt;&lt;span&gt;&lt;span class=&quot;dot blinkit&quot;&gt;&lt;/span&gt;Blinkit&lt;/span&gt;&lt;span&gt;&lt;span class=&quot;dot swiggy&quot;&gt;&lt;/span&gt;Swiggy&lt;/span&gt;&lt;span&gt;&lt;span class=&quot;dot zepto&quot;&gt;&lt;/span&gt;Zepto&lt;/span&gt;&lt;/div&gt;
+    &lt;div class=&quot;chart-placeholder&quot;&gt;[Paid SOV Chart]&lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
 &lt;/body&gt;
 &lt;/html&gt;
 '></iframe>
