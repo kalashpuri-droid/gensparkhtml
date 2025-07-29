@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Full Presentation Template</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #ffffff;
+        }
+        .slide {
+            width: 1280px;
+            height: 720px;
+            margin: 0 auto 20px;
+            position: relative;
+            border: 1px solid #e5e7eb;
+            box-sizing: border-box;
+        }
+        .header-container {
+            height: 7px;
+            width: 100%;
+        }
+        .platform-blinkit { background-color: #FFDE21; }
+        .platform-swiggy { background-color: #FC8019; }
+        .platform-zepto  { background-color: #370F6E; }
+
+        .slide-title {
+            font-size: 40px;
+            font-weight: 700;
+            color: #171a1f;
+            margin: 60px 40px 20px;
+            font-family: "Archivo", sans-serif;
+        }
+        .data-summary {
+            font-size: 20px;
+            color: #171a1f;
+            margin: 0 40px 40px;
+        }
+        .metric-label {
+            font-weight: 600;
+            margin: 10px 0;
+        }
+        .value-block {
+            background-color: #f3f4f6;
+            padding: 10px 20px;
+            display: inline-block;
+            margin-left: 10px;
+        }
+        .platform-card {
+            border: 1px solid #e5e7eb;
+            padding: 20px;
+            margin: 20px 40px;
+        }
+        .region-comparison-table {
+            width: calc(100% - 80px);
+            margin: 20px 40px;
+            border-collapse: collapse;
+        }
+        .region-comparison-table th,
+        .region-comparison-table td {
+            border: 1px solid #e5e7eb;
+            padding: 8px 12px;
+        }
+        .subcategory-bar-chart {
+            height: 200px;
+            background-color: #f3f4f6;
+            margin: 20px 40px;
+        }
+        .insight-callout {
+            border-left: 4px solid #007abc;
+            padding: 20px 40px;
+            margin: 20px 40px;
+            background-color: #f9fafb;
+        }
+        .footer-note {
+            font-size: 16px;
+            color: #565e6d;
+            margin: 0 40px;
+        }
+    </style>
+</head>
+<body>
+
+<section class="slide-container" data-section="title-slide" data-slide="title-slide">
+    <div class="header-container platform-blinkit" data-role="accent-bar"></div>
+    <h1 class="slide-title"><CATEGORY_GMV> Category Insights</h1>
+    <p class="data-summary" data-purpose="overview">Market Analysis &amp; Strategic Insights – &lt;PLATFORM 1&gt;, &lt;PLATFORM 2&gt;, &lt;PLATFORM 3&gt;</p>
+    <p class="footer-note" data-purpose="timeframe">Timeframe – &lt;MONTH YYYY&gt;</p>
+</section>
+
+<section class="slide-container" data-section="category-overview" data-slide="category-overview">
+    <div class="header-container platform-swiggy" data-role="accent-bar"></div>
+    <h2 class="slide-title">Category Overview</h2>
+    <div class="data-summary" data-purpose="key-metrics">
+        <p class="metric-label" data-role="metric">Share of Revenue: &lt;VALUE&gt;</p>
+        <p class="metric-label" data-role="metric">Top Subcategories</p>
+        <div class="subcategory-bar-chart" data-purpose="subcategory-chart" data-role="chart" data-type="horizontal-bar"></div>
+    </div>
+</section>
+
+<section class="slide-container" data-section="competitive-landscape" data-slide="competitive-landscape">
+    <div class="header-container platform-zepto" data-role="accent-bar"></div>
+    <h2 class="slide-title">Competitive Landscape</h2>
+    <div class="platform-card" data-purpose="platform-comparison" data-role="metric">
+        <span class="metric-label" data-role="metric">&lt;BRAND_NAME&gt; Share</span>
+        <span class="value-block" data-role="value">&lt;VALUE&gt;</span>
+    </div>
+</section>
+
+<section class="slide-container" data-section="regional-performance" data-slide="regional-distribution">
+    <div class="header-container platform-blinkit" data-role="accent-bar"></div>
+    <h2 class="slide-title">Regional Distribution</h2>
+    <table class="region-comparison-table" data-purpose="region-table" data-role="table">
+        <tr><th>&lt;REGION&gt;</th><th>&lt;VALUE&gt;</th></tr>
+        <tr><td>&lt;REGION&gt;</td><td>&lt;VALUE&gt;</td></tr>
+    </table>
+</section>
+
+<section class="slide-container" data-section="pack-size" data-slide="pack-size-analysis">
+    <div class="header-container platform-swiggy" data-role="accent-bar"></div>
+    <h2 class="slide-title">Pack Size Analysis</h2>
+    <p class="metric-label" data-role="metric">&lt;PACK_SEGMENT&gt;: <span class="value-block" data-role="value">&lt;VALUE&gt;</span></p>
+</section>
+
+<section class="slide-container" data-section="price-band" data-slide="price-band-segmentation">
+    <div class="header-container platform-zepto" data-role="accent-bar"></div>
+    <h2 class="slide-title">Price Band Segmentation</h2>
+    <p class="metric-label" data-role="metric">Price Range <span class="value-block" data-role="value">&lt;VALUE&gt;</span></p>
+</section>
+
+<section class="slide-container" data-section="listing-availability" data-slide="listing-and-availability">
+    <div class="header-container platform-blinkit" data-role="accent-bar"></div>
+    <h2 class="slide-title">Listing and Availability</h2>
+    <p class="metric-label" data-purpose="availability-summary" data-role="metric">&lt;BRAND_NAME&gt; Available on &lt;PLATFORM&gt;</p>
+</section>
+
+<section class="slide-container" data-section="sov-analysis" data-slide="sov-analysis">
+    <div class="header-container platform-swiggy" data-role="accent-bar"></div>
+    <h2 class="slide-title">Share of Voice Analysis</h2>
+    <div class="insight-callout" data-purpose="insight" data-role="callout">
+        <span class="metric-label" data-role="metric">&lt;BRAND_NAME&gt; highest SOV on &lt;PLATFORM&gt;: <span class="value-block" data-role="value">&lt;VALUE&gt;</span></span>
+    </div>
+</section>
+
+</body>
+</html>
