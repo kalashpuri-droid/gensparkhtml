@@ -859,6 +859,12 @@
         padding: 30px 40px;
       }
 
+      .section-title {
+        font-size: 20px;
+        font-weight: 600;
+        font-family: "Archivo", sans-serif;
+        margin-bottom: 10px;
+      }
       .legend {
         display: flex;
         gap: 20px;
@@ -878,31 +884,34 @@
       .dot.blinkit { background-color: #FFDE21; }
       .dot.swiggy { background-color: #FC8019; }
       .dot.zepto { background-color: #370F6E; }
-
-      .bar-chart {
-        display: flex;
-        justify-content: space-around;
-        align-items: flex-end;
+      .chart-container {
+        border: 1px dashed #9095a0;
         height: 260px;
-        margin-bottom: 20px;
-      }
-      .bar-group {
         display: flex;
         flex-direction: column;
         align-items: center;
-        gap: 8px;
+        justify-content: center;
       }
-      .bars {
+      .chart-placeholder {
+        flex: 1;
         display: flex;
-        gap: 10px;
-        align-items: flex-end;
+        align-items: center;
+        justify-content: center;
+        font-size: 14px;
+        color: #9095a0;
       }
-      .bar {
-        width: 40px;
+
+      .insights ul {
+        padding-left: 20px;
+        font-size: 15px;
+        line-height: 1.5;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px 40px;
       }
-      .bar.blinkit { background-color: #FFDE21; }
-      .bar.swiggy { background-color: #FC8019; }
-      .bar.zepto { background-color: #370F6E; }
+      .insights li {
+        width: 45%;
+      }
 
       .insights ul {
         padding-left: 20px;
@@ -924,39 +933,14 @@
       <img src="1DS-Logo-1.png" alt="1DS Logo" class="logo" />
     </div>
     <div class="section">
+      <div class="section-title">Pack Size Distribution by Platform</div>
       <div class="chart-container" data-block-type="pack_size_distribution_chart" data-chart-type="bar-grouped">
-        <h3>Pack Size Distribution by Platform</h3>
-        <div class="bar-chart">
-          <div class="bar-group" data-pack-size="upto120">
-            <div class="bars">
-              <div class="bar blinkit" data-platform="blinkit" data-pack-size="upto120" style="height: &lt;Blinkit &lt;120g Share&gt;%"></div>
-              <div class="bar swiggy" data-platform="swiggy" data-pack-size="upto120" style="height: &lt;Swiggy &lt;120g Share&gt;%"></div>
-              <div class="bar zepto" data-platform="zepto" data-pack-size="upto120" style="height: &lt;Zepto &lt;120g Share&gt;%"></div>
-            </div>
-            <div class="group-label">Up to 120g</div>
-          </div>
-          <div class="bar-group" data-pack-size="121-250g">
-            <div class="bars">
-              <div class="bar blinkit" data-platform="blinkit" data-pack-size="121-250g" style="height: &lt;Blinkit 121-250g Share&gt;%"></div>
-              <div class="bar swiggy" data-platform="swiggy" data-pack-size="121-250g" style="height: &lt;Swiggy 121-250g Share&gt;%"></div>
-              <div class="bar zepto" data-platform="zepto" data-pack-size="121-250g" style="height: &lt;Zepto 121-250g Share&gt;%"></div>
-            </div>
-            <div class="group-label">121–250g</div>
-          </div>
-          <div class="bar-group" data-pack-size="gt250g">
-            <div class="bars">
-              <div class="bar blinkit" data-platform="blinkit" data-pack-size="gt250g" style="height: &lt;Blinkit &gt;250g Share&gt;%"></div>
-              <div class="bar swiggy" data-platform="swiggy" data-pack-size="gt250g" style="height: &lt;Swiggy &gt;250g Share&gt;%"></div>
-              <div class="bar zepto" data-platform="zepto" data-pack-size="gt250g" style="height: &lt;Zepto &gt;250g Share&gt;%"></div>
-            </div>
-            <div class="group-label">&gt;250g</div>
-          </div>
-        </div>
         <div class="legend">
           <span class="legend-item"><span class="dot blinkit"></span>Blinkit</span>
           <span class="legend-item"><span class="dot swiggy"></span>Swiggy</span>
           <span class="legend-item"><span class="dot zepto"></span>Zepto</span>
         </div>
+        <div class="chart-placeholder">[BAR CHART PLACEHOLDER]</div>
       </div>
       <div class="insights" data-block-type="pack_size_insights">
         <h3>Key Pack Size Insights</h3>
@@ -984,14 +968,15 @@
     .logo{ height:43px; }
     .content{ display:flex; padding:30px 40px; gap:40px; }
     .left{ flex:1; }
-    .chart-container h3{ font-family:&quot;Archivo&quot;, sans-serif; font-size:20px; margin-bottom:8px; }
-    .band-row{ display:flex; align-items:center; margin-bottom:8px; }
-    .band-label{ width:150px; font-family:&quot;Inter&quot;, sans-serif; font-size:14px; color:#171a1f; }
-    .bars{ display:flex; gap:4px; width:420px; height:16px; background:#dee1e6; }
-    .bar{ display:flex; align-items:center; justify-content:center; height:100%; font-size:12px; }
-    .blinkit{ background-color:#FFDE21; }
-    .swiggy{ background-color:#FC8019; }
-    .zepto{ background-color:#370F6E; color:#fff; }
+      .section-title{ font-family:"Archivo", sans-serif; font-size:20px; font-weight:600; margin-bottom:8px; }
+      .legend{ margin-bottom:10px; font-size:14px; display:flex; gap:12px; }
+      .legend-item{ display:flex; align-items:center; }
+      .dot{ width:12px; height:12px; border-radius:50%; margin-right:4px; }
+      .blinkit{ background-color:#FFDE21; }
+      .swiggy{ background-color:#FC8019; }
+      .zepto{ background-color:#370F6E; }
+      .chart-container{ border:1px dashed #9095a0; height:260px; display:flex; flex-direction:column; align-items:center; justify-content:center; }
+      .chart-placeholder{ flex:1; display:flex; align-items:center; justify-content:center; font-size:14px; color:#9095a0; }
     .insights h3{ font-size:18px; font-family:&quot;Archivo&quot;, sans-serif; margin-bottom:8px; }
     .insights ul{ padding-left:16px; font-size:15px; line-height:1.4; }
     .right{ width:520px; display:flex; flex-direction:column; gap:20px; }
@@ -1015,41 +1000,23 @@
   &lt;/div&gt;
   &lt;div class=&quot;content&quot;&gt;
     &lt;div class=&quot;left&quot;&gt;
-      &lt;div class=&quot;chart-container&quot; data-block-type=&quot;price_band_distribution_chart&quot; data-chart-type=&quot;clustered-horizontal-bar&quot;&gt;
-        &lt;h3&gt;Price Band Distribution&lt;/h3&gt;
-        &lt;div class=&quot;band-row&quot; data-price-band=&quot;Value&quot;&gt;
-          &lt;span class=&quot;band-label&quot;&gt;Value (≤ ₹4.5/10g)&lt;/span&gt;
-          &lt;div class=&quot;bars&quot;&gt;
-            &lt;div class=&quot;bar blinkit&quot; data-platform=&quot;Blinkit&quot; data-band=&quot;Value&quot; data-metric=&quot;market_share&quot; style=&quot;width: &amp;lt;Blinkit Value&amp;gt;&quot;&gt;&amp;lt;Blinkit Value&amp;gt;&lt;/div&gt;
-            &lt;div class=&quot;bar swiggy&quot; data-platform=&quot;Swiggy&quot; data-band=&quot;Value&quot; data-metric=&quot;market_share&quot; style=&quot;width: &amp;lt;Swiggy Value&amp;gt;&quot;&gt;&amp;lt;Swiggy Value&amp;gt;&lt;/div&gt;
-            &lt;div class=&quot;bar zepto&quot; data-platform=&quot;Zepto&quot; data-band=&quot;Value&quot; data-metric=&quot;market_share&quot; style=&quot;width: &amp;lt;Zepto Value&amp;gt;&quot;&gt;&amp;lt;Zepto Value&amp;gt;&lt;/div&gt;
-          &lt;/div&gt;
-        &lt;/div&gt;
-        &lt;div class=&quot;band-row&quot; data-price-band=&quot;Mid&quot;&gt;
-          &lt;span class=&quot;band-label&quot;&gt;Mid Premium (₹4.51–₹7.5/10g)&lt;/span&gt;
-          &lt;div class=&quot;bars&quot;&gt;
-            &lt;div class=&quot;bar blinkit&quot; data-platform=&quot;Blinkit&quot; data-band=&quot;Mid&quot; data-metric=&quot;market_share&quot; style=&quot;width: &amp;lt;Blinkit Mid&amp;gt;&quot;&gt;&amp;lt;Blinkit Mid&amp;gt;&lt;/div&gt;
-            &lt;div class=&quot;bar swiggy&quot; data-platform=&quot;Swiggy&quot; data-band=&quot;Mid&quot; data-metric=&quot;market_share&quot; style=&quot;width: &amp;lt;Swiggy Mid&amp;gt;&quot;&gt;&amp;lt;Swiggy Mid&amp;gt;&lt;/div&gt;
-            &lt;div class=&quot;bar zepto&quot; data-platform=&quot;Zepto&quot; data-band=&quot;Mid&quot; data-metric=&quot;market_share&quot; style=&quot;width: &amp;lt;Zepto Mid&amp;gt;&quot;&gt;&amp;lt;Zepto Mid&amp;gt;&lt;/div&gt;
-          &lt;/div&gt;
-        &lt;/div&gt;
-        &lt;div class=&quot;band-row&quot; data-price-band=&quot;Premium&quot;&gt;
-          &lt;span class=&quot;band-label&quot;&gt;Premium (&amp;gt; ₹7.51/10g)&lt;/span&gt;
-          &lt;div class=&quot;bars&quot;&gt;
-            &lt;div class=&quot;bar blinkit&quot; data-platform=&quot;Blinkit&quot; data-band=&quot;Premium&quot; data-metric=&quot;market_share&quot; style=&quot;width: &amp;lt;Blinkit Premium&amp;gt;&quot;&gt;&amp;lt;Blinkit Premium&amp;gt;&lt;/div&gt;
-            &lt;div class=&quot;bar swiggy&quot; data-platform=&quot;Swiggy&quot; data-band=&quot;Premium&quot; data-metric=&quot;market_share&quot; style=&quot;width: &amp;lt;Swiggy Premium&amp;gt;&quot;&gt;&amp;lt;Swiggy Premium&amp;gt;&lt;/div&gt;
-            &lt;div class=&quot;bar zepto&quot; data-platform=&quot;Zepto&quot; data-band=&quot;Premium&quot; data-metric=&quot;market_share&quot; style=&quot;width: &amp;lt;Zepto Premium&amp;gt;&quot;&gt;&amp;lt;Zepto Premium&amp;gt;&lt;/div&gt;
-          &lt;/div&gt;
-        &lt;/div&gt;
-      &lt;/div&gt;
-      &lt;div class=&quot;insights&quot; data-block-type=&quot;insight_bullets&quot;&gt;
-        &lt;h3&gt;Strategic Market Insights&lt;/h3&gt;
-        &lt;ul&gt;
-          &lt;li data-insight-index=&quot;1&quot;&gt;&amp;lt;Insight 1&amp;gt;&lt;/li&gt;
-          &lt;li data-insight-index=&quot;2&quot;&gt;&amp;lt;Insight 2&amp;gt;&lt;/li&gt;
-          &lt;li data-insight-index=&quot;3&quot;&gt;&amp;lt;Insight 3&amp;gt;&lt;/li&gt;
-        &lt;/ul&gt;
-      &lt;/div&gt;
+      <div class="section-title">Price Band Distribution</div>
+      <div class="chart-container" data-block-type="price_band_distribution_chart" data-chart-type="clustered-horizontal-bar">
+        <div class="legend">
+          <span class="legend-item"><span class="dot blinkit"></span>Blinkit</span>
+          <span class="legend-item"><span class="dot swiggy"></span>Swiggy</span>
+          <span class="legend-item"><span class="dot zepto"></span>Zepto</span>
+        </div>
+        <div class="chart-placeholder">[CLUSTERED BAR CHART PLACEHOLDER]</div>
+      </div>
+      <div class="insights" data-block-type="insight_bullets">
+        <h3>Strategic Market Insights</h3>
+        <ul>
+          <li data-insight-index="1">&lt;Insight 1&gt;</li>
+          <li data-insight-index="2">&lt;Insight 2&gt;</li>
+          <li data-insight-index="3">&lt;Insight 3&gt;</li>
+        </ul>
+      </div>
     &lt;/div&gt;
     &lt;div class=&quot;right&quot; data-block-type=&quot;price_segment_brand_tables&quot;&gt;
       &lt;div class=&quot;segment&quot; data-segment=&quot;Value&quot;&gt;
@@ -1150,17 +1117,18 @@
   .logo{height:43px;}
   .main{display:flex;gap:20px;padding:30px 40px;}
   .platform{flex:1;}
-  .platform h3{font-family:"Archivo", sans-serif;font-size:20px;font-weight:600;margin-bottom:10px;}
-  .chart .row{display:flex;align-items:center;margin-bottom:6px;font-size:14px;}
-  .chart .region{width:110px;color:#171a1f;}
-  .chart .bars{flex:1;display:flex;gap:4px;align-items:center;}
-  .chart .bar{height:14px;background:#ccc;color:#171a1f;font-size:12px;line-height:14px;text-align:right;padding-right:3px;}
-  .blinkit .listing{background:#FFDE21;}
-  .blinkit .availability{background:#FFC107;}
-  .swiggy .listing{background:#FC8019;}
-  .swiggy .availability{background:#D65A00;}
-  .zepto .listing{background:#370F6E;}
-  .zepto .availability{background:#7B3FA0;}
+  .section-title{font-family:"Archivo", sans-serif;font-size:20px;font-weight:600;margin-bottom:10px;}
+  .legend{display:flex;gap:12px;margin-bottom:10px;font-size:14px;}
+  .legend-item{display:flex;align-items:center;}
+  .dot{width:12px;height:12px;border-radius:50%;margin-right:4px;}
+  .dot-blinkit-listing{background-color:#FFDE21;}
+  .dot-blinkit-availability{background-color:#FFC107;}
+  .dot-swiggy-listing{background-color:#FC8019;}
+  .dot-swiggy-availability{background-color:#D65A00;}
+  .dot-zepto-listing{background-color:#370F6E;}
+  .dot-zepto-availability{background-color:#7B3FA0;}
+  .chart-container{border:1px dashed #9095a0;height:260px;display:flex;flex-direction:column;align-items:center;justify-content:center;}
+  .chart-placeholder{flex:1;display:flex;align-items:center;justify-content:center;font-size:14px;color:#9095a0;}
   .insights{padding:0 40px;}
   .insights h3{font-family:"Archivo", sans-serif;font-size:20px;font-weight:600;margin-bottom:10px;}
   .insights ul{padding-left:20px;font-size:15px;}
@@ -1168,53 +1136,47 @@
 &lt;/head&gt;
 &lt;body&gt;
 &lt;div class="top-accent"&gt;&lt;/div&gt;
-&lt;div class="header-bar"&gt;&lt;div class="slide-title"&gt;Availability and Listing&lt;/div&gt;&lt;img src="1DS-Logo-1.png" alt="1DS Logo" class="logo"/&gt;&lt;/div&gt;
-&lt;div class="main"&gt;
-  &lt;div class="platform blinkit"&gt;
-    &lt;h3&gt;Blinkit Availability &amp;amp; Listing&lt;/h3&gt;
-    &lt;div class="chart" data-block-type="availability_listing_chart" data-chart-type="clustered-horizontal-bar"&gt;
-      &lt;div class="row"&gt;&lt;span class="region"&gt;Delhi-NCR&lt;/span&gt;&lt;div class="bars"&gt;&lt;div class="bar listing" style="width:20%"&gt;20%&lt;/div&gt;&lt;div class="bar availability" style="width:30%"&gt;30%&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
-      &lt;div class="row"&gt;&lt;span class="region"&gt;Mumbai&lt;/span&gt;&lt;div class="bars"&gt;&lt;div class="bar listing" style="width:25%"&gt;25%&lt;/div&gt;&lt;div class="bar availability" style="width:40%"&gt;40%&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
-      &lt;div class="row"&gt;&lt;span class="region"&gt;Bengaluru&lt;/span&gt;&lt;div class="bars"&gt;&lt;div class="bar listing" style="width:30%"&gt;30%&lt;/div&gt;&lt;div class="bar availability" style="width:35%"&gt;35%&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
-      &lt;div class="row"&gt;&lt;span class="region"&gt;Kolkata&lt;/span&gt;&lt;div class="bars"&gt;&lt;div class="bar listing" style="width:15%"&gt;15%&lt;/div&gt;&lt;div class="bar availability" style="width:20%"&gt;20%&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
-      &lt;div class="row"&gt;&lt;span class="region"&gt;Hyderabad&lt;/span&gt;&lt;div class="bars"&gt;&lt;div class="bar listing" style="width:40%"&gt;40%&lt;/div&gt;&lt;div class="bar availability" style="width:50%"&gt;50%&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
-      &lt;div class="row"&gt;&lt;span class="region"&gt;Chennai&lt;/span&gt;&lt;div class="bars"&gt;&lt;div class="bar listing" style="width:10%"&gt;10%&lt;/div&gt;&lt;div class="bar availability" style="width:15%"&gt;15%&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
-      &lt;div class="row"&gt;&lt;span class="region"&gt;Rest of India&lt;/span&gt;&lt;div class="bars"&gt;&lt;div class="bar listing" style="width:5%"&gt;5%&lt;/div&gt;&lt;div class="bar availability" style="width:8%"&gt;8%&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-  &lt;div class="platform swiggy"&gt;
-    &lt;h3&gt;Swiggy Availability &amp;amp; Listing&lt;/h3&gt;
-    &lt;div class="chart" data-block-type="availability_listing_chart" data-chart-type="clustered-horizontal-bar"&gt;
-      &lt;div class="row"&gt;&lt;span class="region"&gt;Delhi-NCR&lt;/span&gt;&lt;div class="bars"&gt;&lt;div class="bar listing" style="width:25%"&gt;25%&lt;/div&gt;&lt;div class="bar availability" style="width:35%"&gt;35%&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
-      &lt;div class="row"&gt;&lt;span class="region"&gt;Mumbai&lt;/span&gt;&lt;div class="bars"&gt;&lt;div class="bar listing" style="width:20%"&gt;20%&lt;/div&gt;&lt;div class="bar availability" style="width:30%"&gt;30%&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
-      &lt;div class="row"&gt;&lt;span class="region"&gt;Bengaluru&lt;/span&gt;&lt;div class="bars"&gt;&lt;div class="bar listing" style="width:32%"&gt;32%&lt;/div&gt;&lt;div class="bar availability" style="width:38%"&gt;38%&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
-      &lt;div class="row"&gt;&lt;span class="region"&gt;Kolkata&lt;/span&gt;&lt;div class="bars"&gt;&lt;div class="bar listing" style="width:18%"&gt;18%&lt;/div&gt;&lt;div class="bar availability" style="width:22%"&gt;22%&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
-      &lt;div class="row"&gt;&lt;span class="region"&gt;Hyderabad&lt;/span&gt;&lt;div class="bars"&gt;&lt;div class="bar listing" style="width:35%"&gt;35%&lt;/div&gt;&lt;div class="bar availability" style="width:45%"&gt;45%&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
-      &lt;div class="row"&gt;&lt;span class="region"&gt;Chennai&lt;/span&gt;&lt;div class="bars"&gt;&lt;div class="bar listing" style="width:12%"&gt;12%&lt;/div&gt;&lt;div class="bar availability" style="width:18%"&gt;18%&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
-      &lt;div class="row"&gt;&lt;span class="region"&gt;Rest of India&lt;/span&gt;&lt;div class="bars"&gt;&lt;div class="bar listing" style="width:7%"&gt;7%&lt;/div&gt;&lt;div class="bar availability" style="width:10%"&gt;10%&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-  &lt;div class="platform zepto"&gt;
-    &lt;h3&gt;Zepto Availability &amp;amp; Listing&lt;/h3&gt;
-    &lt;div class="chart" data-block-type="availability_listing_chart" data-chart-type="clustered-horizontal-bar"&gt;
-      &lt;div class="row"&gt;&lt;span class="region"&gt;Delhi-NCR&lt;/span&gt;&lt;div class="bars"&gt;&lt;div class="bar listing" style="width:18%"&gt;18%&lt;/div&gt;&lt;div class="bar availability" style="width:28%"&gt;28%&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
-      &lt;div class="row"&gt;&lt;span class="region"&gt;Mumbai&lt;/span&gt;&lt;div class="bars"&gt;&lt;div class="bar listing" style="width:22%"&gt;22%&lt;/div&gt;&lt;div class="bar availability" style="width:32%"&gt;32%&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
-      &lt;div class="row"&gt;&lt;span class="region"&gt;Bengaluru&lt;/span&gt;&lt;div class="bars"&gt;&lt;div class="bar listing" style="width:26%"&gt;26%&lt;/div&gt;&lt;div class="bar availability" style="width:34%"&gt;34%&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
-      &lt;div class="row"&gt;&lt;span class="region"&gt;Kolkata&lt;/span&gt;&lt;div class="bars"&gt;&lt;div class="bar listing" style="width:14%"&gt;14%&lt;/div&gt;&lt;div class="bar availability" style="width:18%"&gt;18%&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
-      &lt;div class="row"&gt;&lt;span class="region"&gt;Hyderabad&lt;/span&gt;&lt;div class="bars"&gt;&lt;div class="bar listing" style="width:38%"&gt;38%&lt;/div&gt;&lt;div class="bar availability" style="width:48%"&gt;48%&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
-      &lt;div class="row"&gt;&lt;span class="region"&gt;Chennai&lt;/span&gt;&lt;div class="bars"&gt;&lt;div class="bar listing" style="width:16%"&gt;16%&lt;/div&gt;&lt;div class="bar availability" style="width:24%"&gt;24%&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
-      &lt;div class="row"&gt;&lt;span class="region"&gt;Rest of India&lt;/span&gt;&lt;div class="bars"&gt;&lt;div class="bar listing" style="width:9%"&gt;9%&lt;/div&gt;&lt;div class="bar availability" style="width:12%"&gt;12%&lt;/div&gt;&lt;/div&gt;&lt;/div&gt;
-    &lt;/div&gt;
-  &lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="insights" data-block-type="insight_bullets"&gt;
-&lt;h3&gt;Key Takeaways&lt;/h3&gt;
-&lt;ul&gt;
-&lt;li&gt;&amp;lt;Insight 1&amp;gt;&lt;/li&gt;
-&lt;li&gt;&amp;lt;Insight 2&amp;gt;&lt;/li&gt;
-&lt;li&gt;&amp;lt;Insight 3&amp;gt;&lt;/li&gt;
-&lt;/ul&gt;
-&lt;/div&gt;
+<div class="header-bar"><div class="slide-title">Availability and Listing</div><img src="1DS-Logo-1.png" alt="1DS Logo" class="logo"/></div>
+<div class="main">
+  <div class="platform blinkit">
+    <div class="section-title">Blinkit Availability & Listing</div>
+    <div class="chart-container" data-block-type="availability_listing_chart" data-chart-type="clustered-horizontal-bar">
+      <div class="legend">
+        <span class="legend-item"><span class="dot dot-blinkit-listing"></span>Listing Coverage</span>
+        <span class="legend-item"><span class="dot dot-blinkit-availability"></span>Avg. Availability</span>
+      </div>
+      <div class="chart-placeholder">[CLUSTERED BAR CHART PLACEHOLDER]</div>
+    </div>
+  </div>
+  <div class="platform swiggy">
+    <div class="section-title">Swiggy Availability & Listing</div>
+    <div class="chart-container" data-block-type="availability_listing_chart" data-chart-type="clustered-horizontal-bar">
+      <div class="legend">
+        <span class="legend-item"><span class="dot dot-swiggy-listing"></span>Listing Coverage</span>
+        <span class="legend-item"><span class="dot dot-swiggy-availability"></span>Avg. Availability</span>
+      </div>
+      <div class="chart-placeholder">[CLUSTERED BAR CHART PLACEHOLDER]</div>
+    </div>
+  </div>
+  <div class="platform zepto">
+    <div class="section-title">Zepto Availability & Listing</div>
+    <div class="chart-container" data-block-type="availability_listing_chart" data-chart-type="clustered-horizontal-bar">
+      <div class="legend">
+        <span class="legend-item"><span class="dot dot-zepto-listing"></span>Listing Coverage</span>
+        <span class="legend-item"><span class="dot dot-zepto-availability"></span>Avg. Availability</span>
+      </div>
+      <div class="chart-placeholder">[CLUSTERED BAR CHART PLACEHOLDER]</div>
+    </div>
+  </div>
+</div>
+<div class="insights" data-block-type="insight_bullets">
+<h3>Key Takeaways</h3>
+<ul>
+<li>&lt;Insight 1&gt;</li>
+<li>&lt;Insight 2&gt;</li>
+<li>&lt;Insight 3&gt;</li>
+</ul>
+</div>
 &lt;/body&gt;
 &lt;/html&gt;
 '></iframe>
